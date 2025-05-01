@@ -1,1 +1,1 @@
-# getting-started-with-threejs
+# Superposition of two particles
