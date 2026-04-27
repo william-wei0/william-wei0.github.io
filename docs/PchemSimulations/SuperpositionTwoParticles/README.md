@@ -1,1 +1,0 @@
-# Superposition of two particles

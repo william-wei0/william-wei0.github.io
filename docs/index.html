@@ -1,206 +1,1284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<title>Homepage-William Wei</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-.container {
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    margin-left: 80px; /* Moves the image to the right */
-    margin-top: 50px; /* Adds space above the image */
-    padding-bottom: 0px; /* Adds space below the image */
-}
-.container::first-of-type{
-    padding-top: 20px; /* Adds space above the image */
-}
-.container img {
-    min-width: 900px;
-    height: auto;
-    margin-right: 20px;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>William Wei — ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-.container video {
-    min-width: 900px;
-    height: auto;
-    margin-right: 20px;
-}
-</style>
-</head>
-<body>
+      :root {
+        --ink: #ffffff;
+        --ink-muted: #eff0f3;
+        --ink-faint: #555c6e;
+        --paper: #0d0f14;
+        --paper-warm: #141720;
+        --accent: #4d8ef0;
+        --accent-light: #1a2a4a;
+        --accent-dark: #7aaef5;
+        --gray-border: #232737;
+        --mono: "DM Mono", monospace;
+        --serif: "Inter", sans-serif;
+        --sans: "Inter", sans-serif;
+      }
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PROJECTS</a>
-    <a href="https://physicalchem.org/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PHYSICAL CHEMISTRY 1 SIMULATIONS</a>
-  </div>
-</div>
+      html {
+        scroll-behavior: smooth;
+      }
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#projects" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PROJECTS</a>
-  <a href="https://william-wei0.github.io/PchemSimulations/" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PHYSICAL CHEMISTRY 1 SIMULATIONS</a>
-</div>
+      body {
+        font-family: var(--sans);
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 3rem;
+        background: rgba(13, 15, 20, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
 
-  <!-- Automatic Slideshow Images -->
-  <div class="mySlides w3-display-container w3-center">
-    <a href="https://william-wei0.github.io/PchemSimulations/RigidRotor">
-    <img src="./images/AngularMomentum.PNG" style="height:80%; width:80%;">
-    
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-    </div>
-    </a>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <a href="https://william-wei0.github.io/PchemSimulations/Superposition1s2pz">
-    <img src="./images/Superpositionof1s2pz.PNG" style="height: 80%; width: 80%;">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-    </div>
-    </a>
-  </div>
-    
-  <div class="mySlides w3-display-container w3-center">
-    <a href="https://william-wei0.github.io/PchemSimulations/SuperpositionTwoParticles">
-    <img src="./images/QuantumSuperposition.PNG" style="height:80%; width:80%;">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-    </div>
-    </a>
-  </div>
+      .nav-logo {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: var(--ink);
+        text-decoration: none;
+      }
 
-  <!-- The Intro Section -->
-  <div class="w3-container w3-content w3-center w3-padding-16" style="max-width:800px" id="intro">
-    <h2 class="w3-wide">WELCOME TO MY PROJECTS HOMEPAGE!</h2>
-    <p class="w3-opacity">WILLIAM WEI</p>
-    <p class="w3-justify">Hello and welcome to my projects homepage! My name is William Wei and I'm currently an undergraduate student at NYU's Tandon School of Engineering.
-                          On this page, you can find all the projects I've worked on and some that I'm currently working on.<br> <br>
-                          My projects range from deep learning to cluster and study tumor infiltrating lymphocytes patterns in pancreatic cancer 
-                          to creating simulations of simple quantum mechanics in Javascript for physical chemistry. I believe that improvements to medicine 
-                          don't only come from advancements in biology, but can also arise from applications of physics and computer science in healthcare. <br> <br>
-                          To find more details about my projects, feel free to scroll further down or click the Projects tab on the top.</p>
-    <div style="height: 40px; background-color: white;" id="projects"></div>
-    <h2 class="w3-wide" >RESEARCH AND PROJECTS</h2>
-</div>
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
 
-<div class="container">
-    <img src="/images/NEBEC2025.png" alt="NEBEC 2025">
-    <div class="text">
-      <h2>Deep Learning-Guided Immunotherapy Screening for Pancreatic Adenocarcinoma</h2>
-      <p>At the NEBEC 2025, we presented our deep learning model for rapid immunotherapy screening. We developed a Resnet18 model on 
-         H&E stains from the GDC Database of pancreatic adenocarcinoma to output a predicted survival curve based on the TIL infiltration pattern.
-         In combination with our organ-on-a-chip device, we were able to rapid evaluate a treatment based on the predicted survival curve.
-      </p>	
+      .nav-links a {
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--ink-muted);
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
 
-<p> Here is a link to a sample of one of the early versions of the model: <a href="https://github.com/william-wei0/TIL-Analyzer"> https://github.com/william-wei0/TIL-Analyzer</a> </p>	
-    </div>
+      .nav-links a:hover {
+        color: var(--accent);
+      }
 
-</div>
-<div class="container">
-    <img src="/images/Figure5.png" alt="An image showing how T cell data is collected and processed into a TIL score for evaluating patient health.">
-    <div class="text"style="padding-left: 30px;">
-        <h2>Flourescent Microscopy of Patient-Derived Pancreatic Adenocarinoma Organoids and SHAP Analysis of T-cell Dynamics and Antigen Expression</h2>
-        <p> This project focused on applying explainable machine learning models to investigate critical features to patient recovery with immunotherapy. By learning more about the important features, we are then able to perform high-throughput immunotherapy drug screening and enable personalized drug recommendations for patients. This project used an multimodal Attention-LSTM model using T cell dynamics such as movement patterns and cell shape changes combined with antigen expression to classify T cells based on their activity pattern. Then, by applying SHAP to anaylze the feature importance, we gained insight about what treatments work and why. 
+      #hero-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 8rem 2rem 4rem;
+        position: relative;
+        z-index: 2;
+        max-width: 760px;
+        width: 100%;
+      }
+
+      .hero-tag {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .hero-tag::before {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: var(--accent);
+      }
+
+      .hero-name {
+        font-family: var(--sans);
+        font-size: clamp(3.2rem, 6vw, 5.2rem);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--ink);
+        margin-bottom: 0.25rem;
+      }
+
+      .hero-name em {
+        color: var(--accent);
+        font-style: normal;
+      }
+
+      .hero-title {
+        font-family: var(--sans);
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        font-weight: 400;
+        color: var(--ink-muted);
+        margin-bottom: 2.5rem;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+      }
+
+      .hero-desc {
+        font-size: 15px;
+        color: var(--ink-muted);
+        max-width: 440px;
+        line-height: 1.75;
+        margin-bottom: 3rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn-primary {
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: var(--accent);
+        color: #ffffff;
+        border: none;
+        padding: 0.9rem 2rem;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+
+      .btn-primary:hover {
+        background: #6aa0f5;
+        transform: translateY(-1px);
+      }
+
+      .btn-outline {
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: transparent;
+        color: var(--ink);
+        border: 1px solid rgba(232, 234, 240, 0.2);
+        padding: 0.9rem 2rem;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+
+      .btn-outline:hover {
+        border-color: var(--ink);
+      }
+
+      .hero-right {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .hero-visual {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        background: #141720;
+      }
+
+      .photo-placeholder {
+        position: relative;
+        z-index: 2;
+        width: 340px;
+        height: 420px;
+        background: var(--paper-warm);
+        border: 1px solid rgba(232, 234, 240, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--ink-faint);
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 4rem;
+      }
+
+      .photo-placeholder svg {
+        opacity: 0.3;
+      }
+
+      .hero-stats {
+        position: absolute;
+        bottom: 3rem;
+        right: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        z-index: 3;
+      }
+
+      .stat {
+        text-align: right;
+      }
+
+      .stat-num {
+        font-family: var(--sans);
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--ink);
+      }
+
+      .stat-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+      }
+
+      /* SCROLL INDICATOR */
+      .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        z-index: 3;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(4px);
+        }
+      }
+
+      .scroll-hint::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 40px;
+        background: var(--ink-faint);
+      }
+
+      /* SECTION COMMON */
+      section {
+        padding: 6rem 5rem;
+      }
+
+      .section-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .section-label::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: var(--accent);
+      }
+
+      .section-title {
+        font-family: var(--sans);
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 3rem;
+        max-width: 600px;
+      }
+
+      /* SKILLS */
+      .skills-section {
+        background: #141720;
+        color: #e8eaf0;
+      }
+
+      .skills-section .section-label {
+        color: #4d8ef0;
+      }
+      .skills-section .section-label::before {
+        background: #4d8ef0;
+      }
+      .skills-section .section-title {
+        color: #e8eaf0;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .skill-group {
+        padding: 2rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .skill-group:nth-child(3n) {
+        border-right: none;
+      }
+      .skill-group:nth-last-child(-n + 3) {
+        border-bottom: none;
+      }
+
+      .skill-group-title {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #4d8ef0;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-tag {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.65);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.3rem 0.75rem;
+        transition: all 0.2s;
+      }
+
+      .skill-tag:hover {
+        background: rgba(77, 142, 240, 0.2);
+        color: #e8eaf0;
+        border-color: #4d8ef0;
+      }
+
+      /* PROJECTS */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .project-card {
+        background: #141720;
+        border: 1px solid #232737;
+        padding: 2rem;
+        position: relative;
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        overflow: hidden;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+      }
+      .project-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .project-card.featured {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 2.5rem;
+      }
+
+      .project-num {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--ink-faint);
+        margin-bottom: 1rem;
+        letter-spacing: 0.08em;
+      }
+
+      .project-name {
+        font-family: var(--sans);
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+        color: var(--ink);
+      }
+
+      .project-desc {
+        font-size: 14px;
+        color: var(--ink-muted);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-tag {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.6rem;
+        background: #1e2230;
+        color: #8b90a0;
+        border: 1px solid #2a2f42;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .project-link {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 2px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+
+      .project-link:hover {
+        color: var(--ink);
+        border-color: var(--ink);
+      }
+      .project-visual {
+        background: #1e2230;
+        border: 1px solid #2a2f42;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--ink-faint);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-visual img {
+        width: 100%; /* Fill parent width */
+        height: 400px; /* Set a fixed height */
+        object-fit: fill; /* Crop to fill without distortion */
+      }
+      .project-visual video {
+        width: 100%; /* Fill parent width */
+        height: 400px; /* Set a fixed height */
+        object-fit: fill; /* Crop to fill without distortion */
+      }
+
+      /* Decorative code lines in project visual */
+      .code-lines {
+        position: absolute;
+        inset: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        opacity: 0.35;
+      }
+
+      .code-line {
+        height: 1px;
+        background: #e8eaf0;
+        border-radius: 1px;
+      }
+
+      /* EXPERIENCE */
+      .experience-section {
+        background: #141720;
+      }
+
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: relative;
+        max-width: 800px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: #232737;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 2rem;
+        padding: 2.5rem 0 2.5rem 2rem;
+        border-bottom: 1px solid #232737;
+        position: relative;
+      }
+
+      .timeline-item:last-child {
+        border-bottom: none;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 2.9rem;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 2px solid #141720;
+      }
+
+      .timeline-date {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        color: var(--ink-faint);
+        padding-top: 4px;
+        line-height: 1.6;
+      }
+
+      .timeline-date span {
+        display: block;
+        font-size: 10px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 0.25rem;
+      }
+
+      .timeline-role {
+        font-family: var(--sans);
+        font-size: 1.05rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.25rem;
+      }
+
+      .timeline-company {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--ink-muted);
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.04em;
+      }
+
+      .timeline-desc {
+        font-size: 14px;
+        color: var(--ink-muted);
+        line-height: 1.75;
+      }
+
+      /* CONTACT */
+      .contact-section {
+        background: #0a0c10;
+        color: #e8eaf0;
+        text-align: center;
+        padding: 6rem 5rem;
+      }
+
+      .contact-section .section-label {
+        color: #4d8ef0;
+        justify-content: center;
+      }
+      .contact-section .section-label::before {
+        background: #4d8ef0;
+      }
+      .contact-section .section-title {
+        color: #e8eaf0;
+        margin: 0 auto 2rem;
+      }
+
+      .contact-email {
+        font-family: var(--sans);
+        font-size: clamp(1.3rem, 2.5vw, 2rem);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 4px;
+        display: inline-block;
+        margin-bottom: 3rem;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+
+      .contact-email:hover {
+        border-color: #4d8ef0;
+        color: #7aaef5;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .social-link {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .social-link:hover {
+        color: #4d8ef0;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #060709;
+        padding: 1.5rem 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .footer-mono {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.2);
+        letter-spacing: 0.06em;
+      }
+
+      /* ANIMATIONS */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-left > * {
+        animation: fadeUp 0.7s ease forwards;
+        opacity: 0;
+      }
+
+      .hero-tag {
+        animation-delay: 0.1s;
+      }
+      .hero-name {
+        animation-delay: 0.2s;
+      }
+      .hero-title {
+        animation-delay: 0.3s;
+      }
+      .hero-desc {
+        animation-delay: 0.4s;
+      }
+      .hero-actions {
+        animation-delay: 0.5s;
+      }
+
+      /* DECORATIVE GRID LINES on hero right */
+      .grid-lines {
+        position: absolute;
+        inset: 0;
+        opacity: 0.04;
+        background-image:
+          linear-gradient(to right, #e8eaf0 1px, transparent 1px),
+          linear-gradient(to bottom, #e8eaf0 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        nav {
+          padding: 1rem 1.5rem;
+        }
+        .nav-links {
+          gap: 1.5rem;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-right {
+          display: none;
+        }
+        .hero-left {
+          padding: 7rem 1.5rem 4rem;
+        }
+        section {
+          padding: 4rem 1.5rem;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .skill-group {
+          border-right: none;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        .project-card.featured {
+          grid-column: span 1;
+          grid-template-columns: 1fr;
+        }
+        .timeline-item {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+        }
+        footer {
+          flex-direction: column;
+          gap: 0.5rem;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="https://william-wei0.github.io/" class="nav-logo"
+        >william-wei0.github.io</a
+      >
+      <ul class="nav-links">
+        <li><a href="#skills">Stack</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-left">
+        <h1 class="hero-name">William<br /><em>Wei</em></h1>
+        <p class="hero-title">
+          NYU Graduate with a minor in Mathematics working in Machine Learning
+          &amp; Full-Stack Development
         </p>
-<p>
-This work included an end-to-end data pipline with an Attention-LSTM model and a scalable image-to-data pipeline with Python/OpenCV/Fiji/Trackmate to preprocess & extract 15 quantitative T-cell features from 80k+ time-lapse images, producing clean NumPy/Pandas/CSV datasets with 900k+ cell instances. It also included a data analysis pipelines to perform log-rank tests & calculate p-values with SciPy/scikit, explore embeddings with k-means clustering.
-</p>
-<p> Here is a link to the model focusing on T-cell dynamics: <a href="https://github.com/william-wei0/Organoid-Analyzer"> https://github.com/william-wei0/Organoid-Analyzer</a> </p>
-      </div>
-</div>
-<div class="container">
-    <img src="/images/DeepLearning.png" alt="An image showing how T cell data is collected and processed into a TIL score for evaluating patient health.">
-    <div class="text"style="padding-left: 30px;">
-        <h2>Cancer-on-a-chip for precision cancer medicine</h2>
-        <p> This critical review explores one of the key reasons is the adopted preclinical models 
-            cannot recapitulate the complex tumor microenvironment (TME) and reflect the heterogeneity 
-            and patient specificity in human cancer and the future of Cancer on a Chip models(CoC). I provided an overview about how applying advanced artificial intelligence tools 
-            and computational models could exploit CoC-derived data and augment the analytical ability of CoC.
+        <p class="hero-desc">
+          I build intelligent systems combining machine learning
+          and software engineering, ranging from image-processing machine
+          learning pipelines for healthcare to full-stack websites with
+          physics simulations.
         </p>
-<p>Liu, L., Wang, H., Chen, R., Song, Y., Wei, W., Baek, D., Gillin, M., Kurabayashi, K., & Chen, W. (2025). Cancer-on-a-chip
-for precision cancer medicine. Lab on a Chip, 25(14), 3314–3347. <a href="https://doi.org/10.1039/D4LC01043D">https://doi.org/10.1039/D4LC01043D</a></p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-outline">Get in Touch</a>
+        </div>
+        <div class="hero-actions">
+          <a href="https://github.com/william-wei0" class="btn-outline">Github</a>
+          <a href="https://www.linkedin.com/in/williamwei0/" class="btn-outline">LinkedIn</a>
+          <a href="#contact" class="btn-outline">Résumé</a>
+        </div>
       </div>
-</div>
-<div class="container">
-    <video height="auto" controls>
-        <source src="/images/crystal_tracking.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="text"style="padding-left: 30px;">
-        <h2>Automated Crystal Tracking and Characterization With Machine Learning for Non-Photochemical Laser-induced Nucleation (NPLIN)</h2>
-        <p> To expand the applications of non-photochemical laser-induced nucleation (NPLIN) while working in Professor Garetz's optics lab,
-            I developed a deep learning model based on YOLO and U-Net
-            to track crystals in real-time and perform pixel-level segmentation. We were then able to measure each crystal's size, shape and velocity, 
-            greatly reducing the analysis time of each experiment and opening possiblities for automated, real-time extraction of specific crystal clusters. 
-        </p>
+    </section>
+    <script>
+      (function () {
+        const canvas = document.getElementById("hero-canvas");
+        const ctx = canvas.getContext("2d");
+
+        let W,
+          H,
+          nodes,
+          mouse = { x: -9999, y: -9999 };
+        const NODE_COUNT = 90;
+        const MAX_DIST = 160;
+        const NODE_COLOR = "77, 142, 240";
+
+        function resize() {
+          W = canvas.width = canvas.offsetWidth;
+          H = canvas.height = canvas.offsetHeight;
+        }
+
+        function initNodes() {
+          nodes = Array.from({ length: NODE_COUNT }, () => ({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            r: Math.random() * 1.5 + 1,
+          }));
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+
+          // Update positions
+          nodes.forEach((n) => {
+            n.x += n.vx;
+            n.y += n.vy;
+            if (n.x < 0 || n.x > W) n.vx *= -1;
+            if (n.y < 0 || n.y > H) n.vy *= -1;
+          });
+
+          // Draw edges
+          for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+              const dx = nodes[i].x - nodes[j].x;
+              const dy = nodes[i].y - nodes[j].y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < MAX_DIST) {
+                const alpha = (1 - dist / MAX_DIST) * 0.18;
+                ctx.beginPath();
+                ctx.moveTo(nodes[i].x, nodes[i].y);
+                ctx.lineTo(nodes[j].x, nodes[j].y);
+                ctx.strokeStyle = `rgba(${NODE_COLOR}, ${alpha})`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+              }
+            }
+
+            // Mouse proximity — pull edges to cursor
+            const mdx = nodes[i].x - mouse.x;
+            const mdy = nodes[i].y - mouse.y;
+            const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+            if (mdist < MAX_DIST * 1.8) {
+              const alpha = (1 - mdist / (MAX_DIST * 1.8)) * 0.35;
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.strokeStyle = `rgba(${NODE_COLOR}, ${alpha})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+
+          // Draw nodes
+          nodes.forEach((n) => {
+            const mdx = n.x - mouse.x;
+            const mdy = n.y - mouse.y;
+            const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+            const proximity = Math.max(0, 1 - mdist / (MAX_DIST * 1.5));
+            const alpha = 0.5 + proximity * 0.5;
+            const radius = n.r + proximity * 1.5;
+
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${NODE_COLOR}, ${alpha})`;
+            ctx.fill();
+          });
+
+          requestAnimationFrame(draw);
+        }
+
+        window.addEventListener("resize", () => {
+          resize();
+        });
+        canvas.closest(".hero").addEventListener("mousemove", (e) => {
+          const rect = canvas.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+        });
+        canvas.closest(".hero").addEventListener("mouseleave", () => {
+          mouse.x = -9999;
+          mouse.y = -9999;
+        });
+
+        resize();
+        initNodes();
+        draw();
+      })();
+    </script>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills-section">
+      <div class="section-label">Technical Stack</div>
+      <h2 class="section-title">What I work with</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">ML &amp; AI</div>
+          <div class="skill-tags">
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Numpy</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">YOLO</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Github Actions</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Full-stack</div>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Tailwind</span>
+            <span class="skill-tag">ThreeJS</span>
+            <span class="skill-tag">Vite</span>
+            <span class="skill-tag">Vitest</span>
+            <span class="skill-tag">Amazon Amplify</span>
+            <span class="skill-tag">Amazon Elastic Beanstalk</span>
+            <span class="skill-tag">Amazon RDS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Languages</div>
+          <div class="skill-tags">
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Research Areas</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">Discrete Time Survival Analysis</span>
+            <span class="skill-tag">Time Series</span>
+            <span class="skill-tag">Pancreatic Adenocarcinoma</span>
+          </div>
+        </div>
       </div>
-</div>
-<div class="container">
-    <img src="/images/physicalchem.png" alt="An image showing the homepage of physicalchem.org.">
-    <div class="text"style="padding-left: 30px;">
-        <h2>Physical Chemistry (Quantum Mechanics) Simulations at PhysicalChem.org</h2>
-        <p> This website contains simulations of introductory quantum mechanics concepts for 	students. These simulations cover topics such as superposition, the Schrödinger 	equation, and point cloud simulations of the 1s and 2p states. This site was built with React, Express.js, Node.js and a Postgres Database to store user preferences and hosted using cloud hosting with AWS.
-        </p>
-<p>Here is a link to website <a href="https://physicalchem.org/">https://physicalchem.org/</a></p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" style="padding: 6rem 5rem; background: #0d0f14">
+      <div class="section-label">Selected Work</div>
+      <h2 class="section-title">Projects &amp; Research</h2>
+
+      <div class="projects-grid">
+        <!-- Featured -->
+        <div class="project-card featured">
+          <div>
+            <div class="project-num">01 — Featured</div>
+            <h3 class="project-name">PhysicalChem.org</h3>
+            <p class="project-desc">
+              A website containing simulations of introductory quantum mechanics
+              concepts for students. These simulations cover topics such as
+              superposition, the Schrödinger equation, and point cloud
+              simulations of the 1s and 2p states. This site was built with
+              React, Express.js, Node.js and a Postgres Database to store user
+              preferences and hosted using cloud hosting with AWS.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">Tailwind</span>
+              <span class="project-tag">AWS</span>
+              <span class="project-tag">Amazon RDS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://physicalchem.org/" class="project-link"
+                >Website</a
+              >
+              <a
+                href="https://github.com/william-wei0/PhysicalChemistry-client"
+                class="project-link"
+                >GitHub</a
+              >
+            </div>
+          </div>
+          <div class="project-visual">
+            <img src="./images/physicalchem.png" />
+          </div>
+        </div>
+
+        <div class="project-card featured">
+          <div>
+            <div class="project-num">02 — Featured</div>
+            <h3 class="project-name">
+              Fluorescence Microscopy of Patient-Derived Pancreatic
+              Adenocarcinoma Organoids and SHAP Analysis of T-cell Dynamics and
+              Antigen Expression
+            </h3>
+            <p class="project-desc">
+              A project focused on applying explainable machine learning models
+              to investigate critical features to patient recovery with
+              immunotherapy. By learning more about the important features, we
+              are then able to perform high-throughput immunotherapy drug
+              screening and enable personalized drug recommendations for
+              patients. This project used an multimodal Attention-LSTM model
+              using T cell dynamics such as movement patterns and cell shape
+              changes combined with antigen expression to classify T cells based
+              on their activity pattern. Then, by applying SHAP to analyze the
+              feature importance, we gained insight about what treatments work
+              and why.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">NumPy</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">MatplotLib</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">Fiji</span>
+              <span class="project-tag">Survival Analysis</span>
+              <span class="project-tag">LSTM</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/william-wei0/Organoid-Analyzer"
+                class="project-link"
+                >GitHub</a
+              >
+            </div>
+          </div>
+          <div class="project-visual">
+            <img src="./images/Figure5.png" />
+          </div>
+        </div>
+
+        <div class="project-card featured">
+          <div>
+            <div class="project-num">03 — Featured</div>
+            <h3 class="project-name">
+              Deep Learning-Guided Immunotherapy Screening for Pancreatic
+              Adenocarcinoma
+            </h3>
+            <p class="project-desc">
+              A fine-tuned Resnet-18 model modified to H&E stains from the GDC
+              Database of pancreatic adenocarcinoma to output a predicted
+              survival curve based on the TIL infiltration pattern. This
+              workflow supported a organ-on-a-chip device, this enabled rapid
+              identification of patient responses and accelerated personalized
+              drug screening.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">NumPy</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">MatplotLib</span>
+              <span class="project-tag">Survival Analysis</span>
+              <span class="project-tag">Python</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/william-wei0/TIL-Analyzer"
+                class="project-link"
+                >GitHub</a
+              >
+            </div>
+          </div>
+          <div class="project-visual">
+            <img src="./images/NEBEC2025.png" />
+          </div>
+        </div>
+
+        <div class="project-card featured">
+          <div>
+            <div class="project-num">04 — Featured</div>
+            <h3 class="project-name">
+              Automated Crystal Tracking and Characterization With Machine
+              Learning for Non-Photochemical Laser-induced Nucleation (NPLIN)
+            </h3>
+            <p class="project-desc">
+              To expand the applications of non-photochemical laser-induced
+              nucleation (NPLIN) while working in Professor Garetz's optics lab,
+              I developed a deep learning model based on YOLO and U-Net to track
+              crystals in real-time and perform pixel-level segmentation. We
+              were then able to measure each crystal's size, shape and velocity,
+              greatly reducing the analysis time of each experiment and opening
+              possibilities for automated, real-time extraction of specific
+              crystal clusters.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">YOLO</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">Docker</span>
+              <span class="project-tag">Git</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/william-wei0/Crystal-Tracker"
+                class="project-link"
+                >GitHub</a
+              >
+            </div>
+          </div>
+          <div class="project-visual">
+            <video controls>
+              <source src="images/crystal_tracking.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-num">05</div>
+          <h3 class="project-name">
+            Cancer-on-a-chip for precision cancer medicine
+          </h3>
+          <p class="project-desc">
+            A critical review that explores some of the reasons why preclinical
+            models cannot recapitulate the complex tumor microenvironment (TME)
+            and reflect the heterogeneity and patient specificity in human
+            cancer and the future of Cancer on a Chip models(CoC). I provided an
+            overview about how applying advanced artificial intelligence tools
+            and computational models could exploit CoC-derived data and augment
+            the analytical ability of CoC.
+          </p>
+          <p class="project-desc">
+            Liu, L., Wang, H., Chen, R., Song, Y., Wei, W., Baek, D., Gillin,
+            M., Kurabayashi, K., & Chen, W. (2025). Cancer-on-a-chip for
+            precision cancer medicine. Lab on a Chip, 25(14), 3314–3347.
+            https://doi.org/10.1039/D4LC01043D
+          </p>
+          <div class="project-links">
+            <a href="https://doi.org/10.1039/D4LC01043D" class="project-link"
+              >Paper</a
+            >
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <div class="project-num">06</div>
+          <h3 class="project-name">2D Tile-Based C++ Game Engine</h3>
+          <p class="project-desc">
+            A 2D top-down action game engine built with C++ and OpenGL, built
+            for CS-3113 Introduction to Game Design. Features a scene-based
+            architecture, tile map rendering, entity collision, enemy AI, and
+            audio support.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">C++</span>
+            <span class="project-tag">OpenGl</span>
+            <span class="project-tag">Shaders</span>
+            <span class="project-tag">Physics Simulations</span>
+            <span class="project-tag">Visual Studio</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/william-wei0/2D-Tiled-Based-Game-Engine"
+              class="project-link"
+              >GitHub</a
+            >
+          </div>
+        </div>
       </div>
-</div>
-<div style="height: 40px; background-color: white;"></div>
+    </section>
 
-
-<!-- End Page Content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-
-</footer>
-
-<script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-</body>
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="section-label">Let's talk</div>
+      <h2 class="section-title">Open to new challenges</h2>
+      <a href="mailto:wjw9857@nyu.edu" class="contact-email">wjw9857@nyu.edu</a>
+      <div class="social-links">
+        <a href="https://github.com/william-wei0" class="social-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/williamwei0/" class="social-link"
+          >LinkedIn</a
+        >
+        <a href="#" class="social-link">Resume PDF</a>
+      </div>
+    </section>
+  </body>
 </html>
